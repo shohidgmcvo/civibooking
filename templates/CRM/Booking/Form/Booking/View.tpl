@@ -24,8 +24,19 @@
  | see the CiviCRM license FAQ at http://civicrm.org/licensing        |
  +--------------------------------------------------------------------+
 *}
-{* View existing booking  record. *}
+{* View existing booking record. *}
+
+{* Brings back the Print friendly option missing on 5.20.2 CiviCRM upgrade *}
+{literal}
+<script type="text/javascript">
+    function printout() {
+        window.location.search += '&snippet=2';
+}
+</script>
+{/literal}
+
 <div class="crm-block crm-content-block crm-booking-view-form-block">
+<p><a href="#" id="printdoc" onclick="printout()">Print Booking</a></p>
     <h3>{ts}View Booking - ID {/ts}{$id}</h3>
     <div class="action-link">
         <div class="crm-submit-buttons">
